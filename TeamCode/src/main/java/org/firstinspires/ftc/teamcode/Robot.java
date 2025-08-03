@@ -7,12 +7,14 @@ public class Robot {
 
     public LinearOpMode myOpMode;
     public HardwareMap hwMap;
-    motor linkageMotor = new motor(this);
+    FourBarMotor linkageMotor = new FourBarMotor(this);
+    Crossbow stringMotor = new Crossbow(this);
     Robot(LinearOpMode myOpMode){
         this.myOpMode = myOpMode;
     }
     public void init(){
         hwMap = myOpMode.hardwareMap;
         linkageMotor.init();
+        stringMotor.init();
     }
 }
